@@ -1,2 +1,147 @@
 <app-navbar></app-navbar>
-<h1>Boards page</h1>
+<div class="w-screen flex container mx-auto mt-10">
+  <div class="w-1/5 min-w-40 mr-7">
+    <ul class="flex flex-col font-medium text-gray-700 mb-10">
+      <li class="">
+        <a
+          class="block cursor-pointer hover:bg-blue-200 rounded px-3 py-2 font-bold hover:text-sky-700"
+        >
+          <fa-icon class="mr-2" [icon]="faTrello"></fa-icon>
+          Boards
+        </a>
+      </li>
+      <li class="">
+        <a
+          class="block cursor-pointer hover:bg-blue-200 rounded px-3 py-2 font-bold hover:text-sky-700"
+        >
+          <fa-icon class="mr-2" [icon]="faBox"></fa-icon>
+          Templates
+        </a>
+      </li>
+      <li>
+        <a
+          class="block cursor-pointer hover:bg-blue-200 rounded px-3 py-2 font-bold hover:text-sky-700"
+        >
+          <fa-icon class="mr-2" [icon]="faWaveSquare"></fa-icon>
+          Home
+        </a>
+      </li>
+    </ul>
+
+    <cdk-accordion>
+      <cdk-accordion-item #accordionMenu="cdkAccordionItem">
+        <button
+          class="w-full py-2 px-3 flex justify-between items-center hover:bg-gray-500/15 rounded text-gray-600"
+          type="button "
+          (click)="accordionMenu.toggle()"
+        >
+          My Workapce
+          <fa-icon
+            [icon]="accordionMenu.expanded ? faChevronUp : faChevronDown"
+          ></fa-icon>
+        </button>
+        <div
+          [ngClass]="{
+            hidden: !accordionMenu.expanded,
+            block: accordionMenu.expanded
+          }"
+        >
+          <ul
+            class="ml-2 flex flex-col text-sm text-gray-700"
+            [style.display]="accordionMenu.expanded ? '' : 'none'"
+          >
+            <li>
+              <a
+                class="block py-1 px-3 cursor-pointer hover:bg-blue-200 rounded hover:text-sky-700"
+              >
+                <fa-icon [icon]="faTrello"></fa-icon>
+                Boards
+              </a>
+            </li>
+            <li>
+              <a
+                class="block py-1 px-3 cursor-pointer hover:bg-blue-200 rounded hover:text-sky-700"
+              >
+                <fa-icon [icon]="faHeart"></fa-icon>
+                Highlights
+              </a>
+            </li>
+            <li>
+              <a
+                class="block py-1 px-3 cursor-pointer hover:bg-blue-200 rounded hover:text-sky-700"
+              >
+                <fa-icon [icon]="faBorderAll"></fa-icon>
+                Views
+              </a>
+            </li>
+            <li>
+              <a
+                class="block py-1 px-3 cursor-pointer hover:bg-blue-200 rounded hover:text-sky-700"
+              >
+                <fa-icon [icon]="faUsers"></fa-icon>
+                Members
+              </a>
+            </li>
+            <li>
+              <a
+                class="block py-1 px-3 cursor-pointer hover:bg-blue-200 rounded hover:text-sky-700"
+                ><fa-icon [icon]="faBars"></fa-icon> Settings
+              </a>
+            </li>
+          </ul>
+        </div>
+      </cdk-accordion-item>
+    </cdk-accordion>
+  </div>
+
+  <div class="w-full flex flex-col">
+    <h3 class="text-2xl mb-5">
+      <fa-icon class="mr-2" [icon]="faClock"></fa-icon>
+      Recently viewed
+    </h3>
+
+    <div class="flex flex-wrap gap-3">
+      <!-- <div class="grid xs:grid-cols grid-cols-4 gap-4"> -->
+      <div
+        class="w-[250px] h-[150px] relative px-2 py-3 flex bg-sky-700 rounded text-white"
+      >
+        <span class="font-bold text-lg">Demo</span>
+        <button class="absolute bottom-0 right-0 m-2">
+          <fa-icon class="" [icon]="faStar"></fa-icon>
+        </button>
+      </div>
+      <div
+        class="w-[250px] h-[150px] relative px-2 py-3 flex bg-sky-700 rounded text-white"
+      >
+        <span class="font-bold text-lg">Demo</span>
+        <button class="absolute bottom-0 right-0 m-2">
+          <fa-icon class="" [icon]="faStar"></fa-icon>
+        </button>
+      </div>
+      <div
+        class="w-[250px] h-[150px] relative px-2 py-3 flex bg-sky-700 rounded text-white"
+      >
+        <span class="font-bold text-lg">Demo</span>
+        <button class="absolute bottom-0 right-0 m-2">
+          <fa-icon class="" [icon]="faStar"></fa-icon>
+        </button>
+      </div>
+      <div
+        class="w-[250px] h-[150px] relative px-2 py-3 flex bg-green-700 rounded text-white"
+      >
+        <span class="font-bold text-lg">Demo</span>
+        <button class="absolute bottom-0 right-0 m-2">
+          <fa-icon class="" [icon]="faStar"></fa-icon>
+        </button>
+      </div>
+      <div
+        class="w-[250px] h-[150px] relative px-2 py-3 flex bg-red-700 rounded text-white"
+      >
+        <span class="font-bold text-lg">Demo</span>
+        <button class="absolute bottom-0 right-0 m-2">
+          <fa-icon class="" [icon]="faStar"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

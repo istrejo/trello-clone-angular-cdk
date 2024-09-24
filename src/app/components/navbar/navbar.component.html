@@ -21,24 +21,35 @@
             <app-btn typeBtn="button" color="sky">Create</app-btn>
           </li>
         </ul>
+        <cdk-accordion>
+          <cdk-accordion-item> </cdk-accordion-item>
+        </cdk-accordion>
       </div>
     </div>
     <div class="flex items-center">
-      <button
-        type="button"
-        class="flex rounded-full"
-        aria-expanded="false"
-        type="button"
-        (click)="isOpen = !isOpen"
-        cdkOverlayOrigin
-        #menuOverlay="cdkOverlayOrigin"
-      >
-        <img
-          class="w-8 h-8 rounded-full"
-          src="https://sm.ign.com/t/ign_nordic/cover/a/avatar-gen/avatar-generations_prsz.300.jpg"
-          alt="user photo"
-        />
-      </button>
+      <div class="flex space-x-2">
+        <button class="text-white" type="button">
+          <fa-icon [icon]="faBell"> </fa-icon>
+        </button>
+        <button class="text-white" type="button">
+          <fa-icon [icon]="faInfoCircle"> </fa-icon>
+        </button>
+        <button
+          type="button"
+          class="flex rounded-full"
+          aria-expanded="false"
+          type="button"
+          (click)="isOpen = !isOpen"
+          cdkOverlayOrigin
+          #menuOverlay="cdkOverlayOrigin"
+        >
+          <img
+            class="w-8 h-8 rounded-full"
+            src="https://sm.ign.com/t/ign_nordic/cover/a/avatar-gen/avatar-generations_prsz.300.jpg"
+            alt="user photo"
+          />
+        </button>
+      </div>
     </div>
   </div>
 </nav>
@@ -66,7 +77,7 @@
       />
       <div class="space-y-1">
         <div>Jese Leos</div>
-        <div class="text-sm text-gray-500">nico@gmail.com</div>
+        <div class="text-sm text-gray-500">nicogmail.com</div>
       </div>
     </div>
     <ul class="py-1">
