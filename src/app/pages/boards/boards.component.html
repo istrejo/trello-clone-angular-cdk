@@ -32,7 +32,7 @@
       <cdk-accordion-item #accordionMenu="cdkAccordionItem">
         <button
           class="w-full py-2 px-3 flex justify-between items-center hover:bg-gray-500/15 rounded text-gray-600"
-          type="button "
+          type="button"
           (click)="accordionMenu.toggle()"
         >
           My Workapce
@@ -86,6 +86,35 @@
               <a
                 class="block py-1 px-3 cursor-pointer hover:bg-blue-200 rounded hover:text-sky-700"
                 ><fa-icon [icon]="faBars"></fa-icon> Settings
+              </a>
+            </li>
+          </ul>
+        </div>
+      </cdk-accordion-item>
+    </cdk-accordion>
+
+    <cdk-accordion>
+      <cdk-accordion-item
+        #accordionItem="cdkAccordionItem"
+        *ngFor="let item of items"
+      >
+        <button
+          class="w-full py-2 px-3 flex justify-between items-center hover:bg-gray-500/15 rounded text-gray-600"
+          type="button"
+          (click)="accordionItem.toggle()"
+        >
+          {{ item.label }}
+          <fa-icon
+            [icon]="accordionItem.expanded ? faChevronUp : faChevronDown"
+          ></fa-icon>
+        </button>
+        <div [style.display]="accordionItem.expanded ? '' : 'none'">
+          <ul class="ml-2 flex flex-col text-sm text-gray-700">
+            <li *ngFor="let subItem of item.items">
+              <a
+                class="block py-1 px-3 cursor-pointer hover:bg-blue-200 rounded hover:text-sky-700"
+              >
+                {{ subItem.label }}
               </a>
             </li>
           </ul>

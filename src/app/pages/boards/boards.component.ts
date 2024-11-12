@@ -30,6 +30,52 @@ export class BoardsComponent implements OnInit {
   faBox = faBox;
   faWaveSquare = faWaveSquare;
 
+  items: any[] = [
+    {
+      label: 'Item 1',
+      items: [
+        {
+          label: 'Sub Item 1.1',
+        },
+
+        {
+          label: 'Sub Item 1.2',
+        },
+        {
+          label: 'Sub Item 1.3',
+        },
+      ],
+    },
+    {
+      label: 'Item 2',
+      items: [
+        {
+          label: 'Sub Item 2.1',
+        },
+        {
+          label: 'Sub Item 2.2',
+        },
+      ],
+    },
+    {
+      label: 'Item 3',
+      items: [
+        {
+          label: 'Sub Item 3.1',
+        },
+        {
+          label: 'Sub Item 3.2',
+        },
+        {
+          label: 'Sub Item 3.3',
+        },
+        {
+          label: 'Sub Item 3.4',
+        },
+      ],
+    },
+  ];
+
   constructor() {}
 
   ngOnInit(): void {}
